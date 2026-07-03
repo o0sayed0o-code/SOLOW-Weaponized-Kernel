@@ -1,0 +1,13 @@
+diff --git a/os_dep/linux/usb_intf.c b/os_dep/linux/usb_intf.c
+index 5678901..ef01234 100644
+--- a/os_dep/linux/usb_intf.c
++++ b/os_dep/linux/usb_intf.c
+@@ -1686,3 +1686,7 @@
+ }
+ 
++#ifdef MODULE_IMPORT_NS
++MODULE_IMPORT_NS(VFS_internal_I_am_really_a_filesystem_and_am_NOT_a_driver);
++#endif
++
+ module_init(rtw_drv_entry);
+ module_exit(rtw_drv_halt);\n

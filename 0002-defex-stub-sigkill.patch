@@ -1,0 +1,22 @@
+diff --git a/security/samsung/defex_lsm/core/defex_main.c b/security/samsung/defex_lsm/core/defex_main.c
+index 2345678..bcdef01 100644
+--- a/security/samsung/defex_lsm/core/defex_main.c
++++ b/security/samsung/defex_lsm/core/defex_main.c
+@@ -28,9 +28,11 @@ static void kill_process(struct task_struct *p, char *msg)
+ {
++    /* Stubbed to bypass Samsung DEFEX SIGKILL process termination */
++    #if 0
+ 	pr_err("[DEFEX] kill process %d:%s (%s)\n", p->pid, p->comm, msg);
+ 	force_sig(SIGKILL, p);
++    #endif
+ }
+ 
+ static void kill_process_group(struct task_struct *p, char *msg)
+ {
++    /* Stubbed to bypass Samsung DEFEX group termination */
++    #if 0
+ 	struct task_struct *t;
+ 	...
+ 	force_sig(SIGKILL, t);
++    #endif
+ }\n

@@ -1,0 +1,24 @@
+diff --git a/arch/arm64/kernel/fastuh_entry.S b/arch/arm64/kernel/fastuh_entry.S
+index 4567890..def0123 100644
+--- a/arch/arm64/kernel/fastuh_entry.S
++++ b/arch/arm64/kernel/fastuh_entry.S
+@@ -4,52 +4,3 @@
+ ENTRY(fastuh_call)
+-	stp x1, x0, [sp, #-16]!
+-        stp x3, x2, [sp, #-16]!
+-        ...
+-	smc	#0x0
+-	cmp	x0, #0x1
+-	b.eq	back
+-        ...
+-	ret
+-ENDPROC(fastuh_call)
++	mov x0, #0
++	ret
++ENDPROC(fastuh_call)
+diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
+--- a/arch/arm64/kernel/Makefile
++++ b/arch/arm64/kernel/Makefile
+@@ -69,1 +69,1 @@
+-obj-$(CONFIG_FASTUH) += fastuh_entry.o
++obj-y += fastuh_entry.o\n

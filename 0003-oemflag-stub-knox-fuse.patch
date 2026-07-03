@@ -1,0 +1,13 @@
+diff --git a/drivers/security/samsung/icdrv/oemflag.c b/drivers/security/samsung/icdrv/oemflag.c
+index 3456789..cdef012 100644
+--- a/drivers/security/samsung/icdrv/oemflag.c
++++ b/drivers/security/samsung/icdrv/oemflag.c
+@@ -10,6 +10,8 @@
+ int oem_flags_set(int flag, int val)
+ {
++    /* Stubbed to prevent Knox/Tamper hardware fuses from being burned */
++    return 0;
++    #if 0
+ 	...
++    #endif
+ }\n
